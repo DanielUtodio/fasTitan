@@ -1,4 +1,4 @@
-# FasTitan Logistics 🚚
+# FasTitan Logistics 
 
 FasTitan Logistics is a last-mile delivery startup focused on fast, reliable, and scalable logistics solutions.  
 This repository contains the **web application** for FasTitan, starting with a landing page and waitlist system.
@@ -7,7 +7,7 @@ The project is built with **React** and structured to scale into a full logistic
 
 ---
 
-## 📌 Project Goals
+##  Project Goals
 
 - Launch a clean and professional landing page
 - Collect users into a waitlist
@@ -20,7 +20,7 @@ The project is built with **React** and structured to scale into a full logistic
 
 ---
 
-## 🧱 Tech Stack
+##  Tech Stack
 
 - **React** (with Vite)
 - **JavaScript (ES6+)**
@@ -31,5 +31,5 @@ The project is built with **React** and structured to scale into a full logistic
 
 ---
 
-## 📂 Folder Structure
+##  Folder Structure
 
