@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import AboutHero from '../components/aboutPage/AboutHero'
 import Fastitan from '../components/aboutPage/Fastitan'
 import WhatWeDo from '../components/aboutPage/WhatWeDo'
@@ -11,6 +11,20 @@ import BeyondBasic from '../components/aboutPage/BeyondBasic'
 import FooterHero from '../components/aboutPage/FooterHero'
 
 const About = () => {
+  useEffect(()=> {
+  const handleTop = () => {
+  window.scrollTo({
+    top: 0,
+    scrollBehaviour: "smooth"
+  })
+}
+window.addEventListener('load', handleTop)
+return () => window.removeEventListener('load', handleTop())
+}, [])
+
+
+
+
   return (
     <div className='w-full h-max flex flex-col justify-start items-center gap-14 bg-background-defaultbg'>
       <AboutHero />

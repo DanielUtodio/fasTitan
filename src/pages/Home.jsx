@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import Hero from "../components/homePage/Hero"
 import ServiceSummary from '../components/homePage/ServiceSummary'
 import RiderCta from '../components/homePage/RiderCta'
@@ -13,12 +13,12 @@ import DeliveryCta from '../components/homePage/DeliveryCta'
 const Home = () => {
   return (
     <main className='w-full h-max flex flex-col justify-start items-center gap-8 bg-background-defaultbg pt-14 px-1 box-border'>
-      <Hero />
+      <Hero /> 
       <ServiceSummary />
       <RiderCta />
       <OurServices />
       <OurValues />
-      <CustomerTestify />
+      <CustomerTestify />   
       <Features />
       <SocialFeedback />
       <PackageTypes />

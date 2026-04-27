@@ -30,7 +30,9 @@ const links = [
 const Header = () => {
   return (
     <header className='w-full fixed h-14 bg-background-footer text-white flex items-center justify-between z-[1000] px-4'>
-      <div className='w-[15%] flex justify-center items-center text-xl font-bold'>FasTitan</div>
+      <div className='w-[15%] h-[90%] flex justify-center items-center text-xl'>
+        <img src="/assets/images/logo.png" alt="FasTitan Logo" className='w-full h-full object-cover' />
+      </div>
       <div className='w-[40%] flex gap-8 items-center'>
         {links.map((link, index) => (
           <Link to={link.route} className="capitalize flex items-center gap-1" key={index}>

@@ -1,74 +1,84 @@
 import React from 'react'
 import { SlSocialFacebook, SlSocialTwitter, SlSocialInstagram } from "react-icons/sl";
+import { Link } from 'react-router-dom';
+import Logo from "/assets/images/logo.png"
+
+const links = [
+  {
+    nameOne: "company",
+    company: [
+      {text: "about fasTitan", link: "/about"},
+      {text: "services", link: "/services"},
+      {text: "rider signup", link: "/services"},
+      {text: "careers", link: "/careers"}
+    ],
+    nameTwo: "support",
+    support: [
+      {text: "FAQs", link: "/faqs"},
+      {text: "contact", link: "/contact"},
+      {text: "privacy policy", link: "/policy"},
+      {text: "terms of service", link: "/terms-of-service"}
+    ],
+    nameThree: "contact",
+    contact: [
+      {text: "support@fasTitan.com", link: "/support"},
+      {text: "+234 802 - 469 - 2297", link: "/contact"},
+      {text: "Lagos, Nigeria", link: "#"}
+    ]
+  }
+]
 
 const Footer = () => {
+  const sectionItems = links.flatMap(group => ([
+    { title: group.nameOne, items: group.company },
+    { title: group.nameTwo, items: group.support },
+    { title: group.nameThree, items: group.contact }
+  ]))
+
   return (
-    <div className='w-full h-[22rem] flex justify-center items-center bg-black'>
-        <div className='w-[90%] h-[90%] flex flex-col justify-start items-start  gap-6'>
-
-            <div className='w-full h-[90%] flex justify-between items-start '>
-                <div className='w-[27%] h-[85%] flex flex-col justify-start gap-4 '>   
-                    <aside>
-                        <h2 className='font-semibold text-white text-2xl'>FasTitan</h2>
-                    </aside>
-                    <p className='text-white'>Fast, reliable last-mile delivery for food, parcels, and errands across Nigeria. Verified riders. Real-time tracking. Secure payments.</p>
-                    <div className='w-max flex justify-start items-center gap-4'>
-                      <div className='w-max h-max p-2 flex justify-center items-center text-lg text-white bg-[#1E2939] rounded-lg'>
-                            <SlSocialFacebook />
-                      </div>
-
-                      <div className='w-max h-max p-2 flex justify-center items-center text-lg text-white bg-[#1E2939] rounded-lg'>
-                            <SlSocialTwitter />
-                      </div>
-
-                      <div className='w-max h-max p-2 flex justify-center items-center text-lg text-white bg-[#1E2939] rounded-lg'>
-                            <SlSocialInstagram />
-                      </div>
-                </div>
+    <footer className='w-full bg-black text-white'>
+      <div className='max-w-[1280px] mx-auto px-4 sm:px-6 md:px-8 py-10 flex flex-col gap-8'>
+        <div className='w-full flex flex-col lg:flex-row justify-between items-start gap-8'>
+          <div className='w-full lg:w-1/3 flex flex-col gap-4'>
+            <img src={Logo} alt="fasTitan logo" className="w-20 h-20"/>
+            <p className='text-sm leading-relaxed text-gray-300'>
+              Fast, reliable last-mile delivery for food, parcels, and errands across Nigeria.
+              Verified riders. Real-time tracking. Secure payments.
+            </p>
+            <div className='flex gap-3'>
+              <span className='p-2 bg-[#1E2939] rounded-lg text-lg'><SlSocialFacebook /></span>
+              <span className='p-2 bg-[#1E2939] rounded-lg text-lg'><SlSocialTwitter /></span>
+              <span className='p-2 bg-[#1E2939] rounded-lg text-lg'><SlSocialInstagram /></span>
             </div>
-
-            <section className='w-[60%] h-[90%] flex justify-start items-start gap-4 '>
-                <div className='w-full h-[90%] flex flex-col justify-start gap-4'>
-                    <h3 className='text-xl text-white'>company</h3>
-                    <ul className='w-full h-max text-gray-400'>
-                        <li>about fasTitan</li>
-                        <li>services</li>
-                        <li>rider signup</li>
-                        <li>careers</li>
-                    </ul>
-                </div>
-
-                <div className='w-full h-[90%] flex flex-col justify-start gap-4'>
-                    <h3 className='text-2xl text-white'>support</h3>
-                    <ul className='w-full h-max text-gray-400'>
-                        <li>FAQs</li>
-                        <li>contact</li>
-                        <li>privacy policy</li>
-                        <li>terms of service</li>
-                    </ul>
-                </div>
-
-                <div className='w-full h-[90%] flex flex-col justify-start gap-4'>
-                    <h3 className='text-2xl text-white'>company</h3>
-                    <ul className='w-full h-max text-gray-400'>
-                        <li>support@fasTitan.ng</li>
-                        <li>+234 802 - 469 - 2297</li>
-                        <li>Lagos, Nigeia</li>
-                    </ul>
-                </div>
-            </section>
           </div>
-          <hr className='w-full' />
-          <div className='w-full flex justify-between items-center'>
-            <small className='text-gray-400'>©2026 FastTitan Logistics. All rights reserved.</small>
-            <div className='text-gray-400 w-max flex gap-3'>
-                <small>privacy</small>
-                <small>terms</small>
-                <small>cookies</small>
-            </div>
+
+          <div className='w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6'>
+            {sectionItems.map((section, idx) => (
+              <div key={idx} className='space-y-3'>
+                <h3 className='text-xl font-semibold capitalize'>{section.title}</h3>
+                <ul className='space-y-2 text-sm'>
+                  {section.items.map((item, i) => (
+                    <li key={`${section.title}-${i}`}>
+                      <Link to={item.link} className='text-gray-300 hover:text-white'>{item.text}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
-    </div>
+
+        <hr className='border-gray-700' />
+        <div className='w-full flex flex-col sm:flex-row justify-between items-center gap-4 text-gray-400 text-sm'>
+          <small>©2026 FastTitan Logistics. All rights reserved.</small>
+          <div className='flex gap-4'>
+            <span className='hover:text-white cursor-pointer'>privacy</span>
+            <span className='hover:text-white cursor-pointer'>terms</span>
+            <span className='hover:text-white cursor-pointer'>cookies</span>
+          </div>
+        </div>
+      </div>
+    </footer>
   )
 }
 
