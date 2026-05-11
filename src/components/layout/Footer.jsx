@@ -37,7 +37,7 @@ const Footer = () => {
 
   return (
     <footer className='w-full bg-black text-white'>
-      <div className='max-w-[1280px] mx-auto px-4 sm:px-6 md:px-8 py-10 flex flex-col gap-8'>
+      <div className='max-w-[100%] mx-auto px-4 sm:px-6 md:px-8 py-10 flex flex-col gap-8'>
         <div className='w-full flex flex-col lg:flex-row justify-between items-start gap-8'>
           <div className='w-full lg:w-1/3 flex flex-col gap-4'>
             <img src={Logo} alt="fasTitan logo" className="w-20 h-20"/>

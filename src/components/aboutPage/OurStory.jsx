@@ -25,24 +25,20 @@ const FakeIcon = () => {
 
 const OurStory = () => {
   return (
-        <div className='w-[80%] h-max flex flex-col justify-center items-center gap-12 p-4 mt-14'>
-            <h1 className='text-4xl font-bold text-white mb-12'>Our Story</h1>
-            {
-              storyline.map((item, index) => (
-                <div key={index} className='w-[60%] h-max flex flex-col justify-center items-end gap-8'>
-                  <div className='w-max h-max flex gap-4 items-start'>
-                    <FakeIcon />
-                    <div className='w-[30rem] h-max flex flex-col justify-between gap-2'>
-                      <h2 className='text-[#FF1F1F] text-xl'>{item.year}</h2>
-                      <small className='text-white'>
-                        {item.description}
-                      </small>
-                    </div>
-                  </div>
-                </div>
-              ))
-            }
+    <section className='w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col justify-center items-center gap-12'>
+      <h1 className='text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-12'>Our Story</h1>
+      {storyline.map((item, index) => (
+        <div key={index} className='w-full max-w-4xl flex flex-col justify-center items-center gap-8'>
+          <div className='w-full max-w-2xl flex gap-4 items-start'>
+            <FakeIcon />
+            <div className='flex-1 flex flex-col justify-between gap-2'>
+              <h2 className='text-[#FF1F1F] text-lg sm:text-xl'>{item.year}</h2>
+              <p className='text-white text-sm sm:text-base'>{item.description}</p>
+            </div>
+          </div>
         </div>
+      ))}
+    </section>
   )
 }
 

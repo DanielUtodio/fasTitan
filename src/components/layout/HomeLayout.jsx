@@ -6,9 +6,11 @@ import { Outlet } from 'react-router-dom'
 const HomeLayout = () => {
   return (
     <>
-        <Header />
+      <Header />
+      <main className='pt-20'>
         <Outlet />
-        <Footer />
+      </main>
+      <Footer />
     </>
   )
 }

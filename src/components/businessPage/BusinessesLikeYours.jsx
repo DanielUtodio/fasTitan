@@ -30,28 +30,29 @@ const yourBusinesses = [
 
 const BusinessesLikeYours = () => {
   return (
-    <div className='w-full h-max flex justify-center items-center p-12'>
-        <div className='w-[80%] h-[20rem] flex flex-col items-center justify-center gap-10'>
-            <h1 className='text-white text-4xl'>Built for Businesses Like Yours</h1>
-            <small className='text-white'>FasTitan serves a wide range of businesses across industries</small>
-
-            <div className='w-[85%] h-max flex justify-center items-center gap-8'>
-            {yourBusinesses.map((item, index) => {
-                    const Icon = item.icon;
-                    return (
-                        <div key={index} className='w-[33%] h-[20rem] border border-[#1E2939] rounded-lg flex flex-col justify-start items-start gap-4 py-6 px-4 box-border'>
-                            <div className='w-max h-max p-2 rounded-2xl bg-primary flex justify-center items-center bg-primaryCtaBtn-shade10'>
-                              <Icon size={28} color="#FF1F1F" />
-                            </div>
-                            <h2 className='text-white text-xl'>{item.title}</h2>
-                            <p className='text-white text-sm'>{item.description}</p>
-                        </div>
-                    )
-                })}
-            </div>
+    <section className='w-full bg-background-footer py-12 px-4 sm:px-6 lg:px-8'>
+      <div className='mx-auto flex max-w-7xl flex-col items-center gap-10'>
+        <div className='max-w-3xl text-center'>
+          <h1 className='text-white text-3xl sm:text-4xl font-semibold'>Built for Businesses Like Yours</h1>
+          <p className='mt-4 text-white text-sm sm:text-base'>FasTitan serves a wide range of businesses across industries</p>
         </div>
 
-    </div>
+        <div className='w-full grid gap-6 sm:grid-cols-2 lg:grid-cols-4'>
+          {yourBusinesses.map((item, index) => {
+            const Icon = item.icon
+            return (
+              <div key={index} className='w-full min-h-[18rem] rounded-xl border border-[#1E2939] bg-[#090909] p-6 flex flex-col justify-start gap-4'>
+                <div className='inline-flex items-center justify-center rounded-2xl bg-primaryCtaBtn-shade10 p-3'>
+                  <Icon size={28} color="#FF1F1F" />
+                </div>
+                <h2 className='text-white text-xl'>{item.title}</h2>
+                <p className='text-white text-sm'>{item.description}</p>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </section>
   )
 }
 
